@@ -33,7 +33,7 @@ class Test2():
     WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.XPATH, "(//li[@id=\'nav-16728556\']/a/div)[9]")))
     self.driver.find_element(By.XPATH, "(//li[@id=\'nav-16728556\']/a/div)[9]").click()
     WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".item_footer_1:nth-child(4) span")))
-    assert self.driver.find_element(By.XPATH, "//div[@id=\'wrapper\']/section[2]/div/div/div[3]/div/div/h4").text == "หมา"
+    assert self.driver.find_element(By.XPATH, "//div[@id=\'wrapper\']/section[2]/div/div/div[3]/div/div/h4").text == "ค่านิยมองค์กร"
     element = self.driver.find_element(By.CSS_SELECTOR, "body")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
