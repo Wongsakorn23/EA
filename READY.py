@@ -414,7 +414,7 @@ class TestREADY100():
       self.driver.find_element(By.XPATH, "(//li[@id=\'nav-16728556\']/a/div)[17]").click()
       WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@id=\'body-bg\']/section[2]/div/div/div/div/h4")))
       assert self.driver.find_element(By.XPATH, "//div[@id=\'body-bg\']/section[2]/div/div/div/div/h4").text == "ติดต่อนักลงทุนสัมพันธ์"
-    except AssertionError as e:
+    except Exception as e:
             # If an assertion error occurs, capture a screenshot and attach it to the Allure report
             allure.attach(self.driver.get_screenshot_as_png(), name="Error Screenshot", attachment_type=allure.attachment_type.PNG)
             raise e
