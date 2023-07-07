@@ -32,8 +32,10 @@ class TestREADY100():
     try:
       self.driver.get("https://demo.irplus.in.th/Listed/READY/th/index")
       self.driver.find_element(By.XPATH, "(//li[@id=\'nav-16539118\']/a/div)[4]").click()
-      # WebDriverWait(self.driver, 20).until(expected_conditions.visibility_of_element_located((By.LINK_TEXT, "ยอมรับทั้งหมด")))
-      # self.driver.find_element(By.LINK_TEXT, "ยอมรับทั้งหมด").click()
+      time.sleep(3)
+      self.driver.find_element(By.XPATH, "(//li[@id=\'nav-16539118\']/a/div)[4]").click()
+      WebDriverWait(self.driver, 20).until(expected_conditions.visibility_of_element_located((By.LINK_TEXT, "ยอมรับทั้งหมด")))
+      self.driver.find_element(By.LINK_TEXT, "ยอมรับทั้งหมด").click()
       time.sleep(2)
       WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@id=\'body-bg\']/section[3]/div/div/div/div[2]/img")))
       elements = self.driver.find_elements(By.XPATH, "//div[@id=\'body-bg\']/section[3]/div/div/div/div[2]/img")
