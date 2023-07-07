@@ -62,7 +62,7 @@ class TestREADY100():
       self.driver.find_element(By.XPATH, "(//li[@id=\'nav-16539118\']/a/div)[4]").click()
       time.sleep(2)
       WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@id=\'body-bg\']/section[5]/div/div/div[2]/a")))
-      #self.driver.find_element(By.XPATH, "//div[@id=\'body-bg\']/section[5]/div/div/div[2]/a").click()
+      self.driver.find_element(By.XPATH, "//div[@id=\'body-bg\']/section[5]/div/div/div[2]/a").click()
       time.sleep(2)
       self.driver.find_element(By.XPATH, "(//li[@id=\'nav-16539118\']/a/div)[4]").click()
       time.sleep(2)
