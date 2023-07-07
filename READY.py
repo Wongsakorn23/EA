@@ -2,6 +2,7 @@
 import pytest
 import time
 import json
+import allure
 from SC import take_screenshot
 from selenium import webdriver
 from selenium.webdriver.common.by import By
