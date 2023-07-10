@@ -44,7 +44,7 @@ class TestREADY100():
       elements = self.driver.find_elements(By.CSS_SELECTOR, ".parallax")
       #assert len(elements) > 0
       self.driver.find_element(By.ID, "navbarDropdown").click()
-      WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.LINK_TEXT, "สารจากประธานกรรมการ")))
+      WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.LINK_TEXT, "สารจากประธานกรรมกา")))
       self.driver.find_element(By.LINK_TEXT, "สารจากประธานกรรมการ").click()
       WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".big-headSubText")))
       assert self.driver.find_element(By.CSS_SELECTOR, ".big-headSubText").text == "สารจากประธานกรรมการ"
