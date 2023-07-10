@@ -14,8 +14,8 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 class TestREADY100():
   def setup_method(self, method):
-    self.driver = webdriver.Remote(command_executor='http://192.168.41.66:4445', desired_capabilities=DesiredCapabilities.CHROME)
-    #self.driver = webdriver.Chrome()
+    #self.driver = webdriver.Remote(command_executor='http://192.168.41.66:4445', desired_capabilities=DesiredCapabilities.CHROME)
+    self.driver = webdriver.Chrome()
     self.driver.maximize_window()
     self.vars = {}
   
@@ -471,6 +471,8 @@ class TestREADY100():
       self.driver.find_element(By.LINK_TEXT, "ติดต่อนักลงทุนสัมพันธ์").click()
       WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".big-headSubText")))
       assert self.driver.find_element(By.CSS_SELECTOR, ".big-headSubText").text == "ติดต่อนักลงทุนสัมพันธ์"
+      WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.LINK_TEXT, "หน้าหลัก")))
+      time.sleep(2)
     except Exception as e:
         # If an assertion error occurs, capture a screenshot and attach it to the Allure report
         allure.attach(self.driver.get_screenshot_as_png(), name="Error Screenshot", attachment_type=allure.attachment_type.PNG)
