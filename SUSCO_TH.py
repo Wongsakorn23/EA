@@ -107,7 +107,7 @@ class TestREADY100():
       WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.LINK_TEXT, "น้ำมันเครื่อง")))
       self.driver.find_element(By.LINK_TEXT, "น้ำมันเครื่อง").click()
       WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".big-headSubText")))
-      assert self.driver.find_element(By.CSS_SELECTOR, ".big-headSubText").text == "น้ำมันเครื่อง"
+      assert self.driver.find_element(By.CSS_SELECTOR, ".big-headSubText").text == "น้ำมันเครื่องXXXX"
       time.sleep(2)
       self.driver.find_element(By.LINK_TEXT, "ผลิตภัณฑ์และบริการ").click()
       WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.LINK_TEXT, "สถานีบริการ")))
