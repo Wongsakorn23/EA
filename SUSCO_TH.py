@@ -471,10 +471,6 @@ class TestREADY100():
       self.driver.find_element(By.LINK_TEXT, "ติดต่อนักลงทุนสัมพันธ์").click()
       WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".big-headSubText")))
       assert self.driver.find_element(By.CSS_SELECTOR, ".big-headSubText").text == "ติดต่อนักลงทุนสัมพันธ์"
-      WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.LINK_TEXT, "หน้าหลัก")))
-      time.sleep(2)
-      self.driver.find_element(By.LINK_TEXT, "หน้าหลัก").click()
-      self.driver.find_element(By.CSS_SELECTOR, ".fa").click()
     except Exception as e:
         # If an assertion error occurs, capture a screenshot and attach it to the Allure report
         allure.attach(self.driver.get_screenshot_as_png(), name="Error Screenshot", attachment_type=allure.attachment_type.PNG)
