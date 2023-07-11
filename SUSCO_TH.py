@@ -33,16 +33,19 @@ class TestREADY100():
     try:
       self.driver.get("https://demo.irplus.in.th/Listed/SUSCO/homepage.asp")
       #self.driver.set_window_size(1936, 1056)
+      time.sleep(2)
       self.driver.find_element(By.CSS_SELECTOR, ".fa").click()
       self.driver.find_element(By.LINK_TEXT, "TH").click()
+      time.sleep(2)
       self.driver.find_element(By.CSS_SELECTOR, ".fa").click()
       WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.LINK_TEXT, "หน้าหลัก")))
       self.driver.find_element(By.LINK_TEXT, "หน้าหลัก").click()
+      time.sleep(2)
       self.driver.find_element(By.CSS_SELECTOR, ".fa").click()
       self.driver.find_element(By.LINK_TEXT, "ยอมรับ").click()
       WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".parallax")))
       elements = self.driver.find_elements(By.CSS_SELECTOR, ".parallax")
-      #assert len(elements) > 0
+      assert len(elements) > 0
       self.driver.find_element(By.ID, "navbarDropdown").click()
       WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.LINK_TEXT, "สารจากประธานกรรมการ")))
       self.driver.find_element(By.LINK_TEXT, "สารจากประธานกรรมการ").click()
